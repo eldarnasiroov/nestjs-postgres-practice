@@ -4,6 +4,7 @@ import { SequelizeModule } from "@nestjs/sequelize";
 import { User } from "./users/models/user.model";
 import { RolesModule } from "./roles/roles.module";
 import { Role } from "./roles/models/role.model";
+import { UserRole } from "./userRoles/userRole.model";
 
 @Module({
     imports: [
@@ -14,7 +15,7 @@ import { Role } from "./roles/models/role.model";
             username: 'postgres',
             password: '6640225',
             database: 'nest-practice',
-            models: [User, Role],
+            models: [User, Role, UserRole],
             autoLoadModels: true,
           }),
           UserModule,
