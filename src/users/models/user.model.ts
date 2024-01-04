@@ -23,6 +23,12 @@ export class User extends Model<User, UserData> {
   @Column({ allowNull: false })
   password: string;
 
+  @Column({ type: DataType.BOOLEAN, defaultValue: false })
+  banned: boolean;
+
+  @Column({ type: DataType.STRING, allowNull: true })
+  banReason: string;
+
   @BelongsToMany(() => Role, () => UserRole)
   roles: Role[]
 }
